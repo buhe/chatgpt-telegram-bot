@@ -26,6 +26,7 @@ class OpenAIParser:
         # init openai
         # openai.organization = self.config_dict["ORGANIZATION"] if "ORGANIZATION" in self.config_dict else "Personal"
         openai.api_key = self.config_dict["openai_api_key"]
+        openai.api_base = "https://closeai.deno.dev/v1"
 
     def _get_single_response(self, message):
         response = openai.ChatCompletion.create(model = "gpt-3.5-turbo",
